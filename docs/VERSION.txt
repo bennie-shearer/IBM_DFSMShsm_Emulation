@@ -1,0 +1,134 @@
+IBM DFSMShsm Emulation Library
+Version Information
+================================================================================
+
+Current Version: 4.2.0
+Release Date: 2025-01-06
+
+Version Format: MAJOR.MINOR.PATCH
+
+MAJOR: Significant architecture changes or breaking API changes
+MINOR: New features, backward-compatible enhancements
+PATCH: Bug fixes, documentation updates, minor improvements
+
+--------------------------------------------------------------------------------
+Version History Summary
+--------------------------------------------------------------------------------
+
+4.2.0 (2025-01-06)
+  - Added hsm_csv.hpp for CSV parsing and writing
+  - Added hsm_args.hpp for command-line argument parsing
+  - Added hsm_uuid.hpp for UUID generation
+  - Minor version bump for new features
+  - Total headers: 77
+
+4.1.9 (2025-01-06)
+  - Consolidated versioned ANALYSIS files into single ANALYSIS.md
+  - Reduced documentation from 17 to 11 files
+  - CHANGELOG.md is the authoritative version history
+  - Total headers: 74
+
+4.1.8 (2025-01-06)
+  - Added hsm_json.hpp for lightweight JSON utilities
+  - Added hsm_ini.hpp for INI configuration file support
+  - Added hsm_validation.hpp for input validation framework
+  - Fixed example count in documentation
+  - Total headers: 74
+
+4.1.7 (2025-01-06)
+  - Added hsm_format.hpp for format string utilities
+  - Added hsm_filesystem.hpp for cross-platform filesystem
+  - Added hsm_source_location.hpp for debug utilities
+  - Table formatting, progress bars, text wrapping
+  - Total headers: 71
+
+4.1.6 (2025-01-06)
+  - Added hsm_span.hpp for C++20 std::span utilities
+  - Added hsm_ranges.hpp for C++20 ranges utilities
+  - Added hsm_algorithm.hpp for algorithm utilities
+  - Statistical functions (mean, median, variance, etc.)
+  - Set operations (intersection, union, difference)
+  - Total headers: 68
+
+4.1.5 (2025-01-06)
+  - Added hsm_concepts.hpp for C++20 type constraints
+  - Added hsm_string_utils.hpp for string manipulation
+  - Added hsm_time_utils.hpp for time/date utilities
+  - Added hsm_memory.hpp for memory management
+  - Enhanced type safety with concepts
+  - Total headers: 65
+
+4.1.4 (2025-01-06)
+  - Added hsm_platform.hpp for cross-platform compatibility
+  - Fixed all compiler warnings in examples
+  - Added static assertions and compile-time checks
+  - Enhanced platform detection (Windows, Linux, macOS)
+  - Added compiler detection (GCC, Clang, MSVC)
+  - Added C++ standard version detection
+  - Added performance hint macros (likely/unlikely)
+  - Added diagnostic control macros
+  - Added byte-order utilities
+
+4.1.3 (2025-01-06)
+  - Fixed Unicode encoding issues (ASCII-only codebase)
+  - Replaced box-drawing characters with ASCII alternatives
+
+4.1.2 (2025-01-05)
+  - Added code coverage tooling (ENABLE_COVERAGE option)
+  - Fixed nodiscard warnings in test suite
+  - Added pragma-based warning suppression
+
+4.1.1 (2025-01-05)
+  - Bug fixes and stability improvements
+  - Enhanced test coverage
+
+4.1.0 (2025-01-05)
+  - Binary Protocol support (hsm_binary_protocol.hpp)
+  - Event Sourcing pattern (hsm_event_sourcing.hpp)
+  - LRU Cache implementation (hsm_lru_cache.hpp)
+  - Command History with undo/redo (hsm_command_history.hpp)
+
+4.0.0 (2025-01-04)
+  - Major architecture refactoring
+  - Enhanced SMS integration
+  - Improved DASD emulation
+  - Cloud tier support
+
+--------------------------------------------------------------------------------
+Build Information
+--------------------------------------------------------------------------------
+
+Compiler Requirements:
+  - C++20 or later
+  - GCC 10+, Clang 12+, or MSVC 2019+ (v16.8+)
+
+Supported Platforms:
+  - Windows (x64)
+  - Linux (x64, ARM64)
+  - macOS (x64, ARM64)
+
+Build System:
+  - CMake 3.16 or later
+
+Dependencies:
+  - None (header-only library with no external dependencies)
+
+--------------------------------------------------------------------------------
+File Counts (v4.2.0)
+--------------------------------------------------------------------------------
+
+Headers:        77 files (include/)
+Source:          2 files (src/)
+Tests:           9 files (tests/)
+Examples:       17 files (examples/)
+Documentation:  11 files (docs/)
+
+Total Lines:    ~55,000
+
+--------------------------------------------------------------------------------
+Contact
+--------------------------------------------------------------------------------
+
+For issues and contributions, refer to the project documentation.
+
+================================================================================
