@@ -830,7 +830,7 @@ private:
     }
     
     ABackupResult simulateBackup(BackupVersion& backup,
-                                  const AggregateGroup& group,
+                                  [[maybe_unused]] const AggregateGroup& group,
                                   const ABackupOptions& options,
                                   ProgressCallback progress) {
         ABackupResult result;

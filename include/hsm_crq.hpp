@@ -592,7 +592,7 @@ public:
         return std::nullopt;
     }
     
-    std::optional<RecallRequest> dequeueForHost(const std::string& hostName,
+    std::optional<RecallRequest> dequeueForHost([[maybe_unused]] const std::string& hostName,
                                                  const HostInfo& hostInfo) {
         std::lock_guard<std::mutex> lock(mutex_);
         
@@ -1404,7 +1404,7 @@ public:
     
     bool reportRecallComplete(const std::string& requestId,
                               const std::string& hostName,
-                              uint64_t bytesRecalled) {
+                              [[maybe_unused]] uint64_t bytesRecalled) {
         auto info = queue_->getRequest(requestId);
         if (!info) return false;
         
@@ -1422,7 +1422,7 @@ public:
     
     bool reportRecallFailed(const std::string& requestId,
                             const std::string& hostName,
-                            const std::string& errorMessage) {
+                            [[maybe_unused]] const std::string& errorMessage) {
         auto info = queue_->getRequest(requestId);
         if (!info) return false;
         

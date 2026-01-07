@@ -1616,7 +1616,7 @@ public:
     
 private:
     void generateDailySummary(std::ostringstream& report, 
-                             const ReportOptions& options) const {
+                             [[maybe_unused]] const ReportOptions& options) const {
         report << "========================================\n";
         report << "         HSM Daily Summary Report\n";
         report << "========================================\n\n";
@@ -1727,7 +1727,7 @@ private:
     }
     
     void generateSLACompliance(std::ostringstream& report,
-                              const ReportOptions& options) const {
+                              [[maybe_unused]] const ReportOptions& options) const {
         report << "========================================\n";
         report << "       SLA Compliance Report\n";
         report << "========================================\n\n";
@@ -1761,7 +1761,7 @@ private:
     }
     
     void generateAnomalyReport(std::ostringstream& report,
-                              const ReportOptions& options) const {
+                              [[maybe_unused]] const ReportOptions& options) const {
         report << "========================================\n";
         report << "          Anomaly Report\n";
         report << "========================================\n\n";
@@ -1798,7 +1798,7 @@ private:
     }
     
     void generatePerformanceAnalysis(std::ostringstream& report,
-                                    const ReportOptions& options) const {
+                                    [[maybe_unused]] const ReportOptions& options) const {
         report << "========================================\n";
         report << "      Performance Analysis Report\n";
         report << "========================================\n\n";

@@ -676,7 +676,7 @@ public:
 private:
     const ReportDataCollector& collector_;
     
-    std::string generateText(const std::vector<RecallRecord>& records,
+    std::string generateText([[maybe_unused]] const std::vector<RecallRecord>& records,
                              const RecallStatistics& stats) {
         std::ostringstream oss;
         oss << std::string(70, '=') << "\n";
@@ -700,7 +700,7 @@ private:
         return oss.str();
     }
     
-    std::string generateJSON(const std::vector<RecallRecord>& records,
+    std::string generateJSON([[maybe_unused]] const std::vector<RecallRecord>& records,
                              const RecallStatistics& stats) {
         std::ostringstream oss;
         oss << std::fixed << std::setprecision(2);

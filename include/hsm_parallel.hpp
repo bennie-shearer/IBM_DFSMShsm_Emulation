@@ -819,7 +819,7 @@ public:
      * Dynamically allocate an alias for a volume
      */
     std::optional<DeviceAddress> allocateAlias(const VolumeSerial& volser,
-                                               const std::string& job_name) {
+                                               [[maybe_unused]] const std::string& job_name) {
         std::unique_lock lock(mutex_);
         
         // Find pool for this volume

@@ -149,7 +149,7 @@ struct SelectionCriteria {
     bool includeEmpty{false};
     
     bool matches(const std::string& dsn, const std::string& mc = "",
-                 const std::string& sc = "", uint64_t size = 0) const {
+                 [[maybe_unused]] const std::string& sc = "", uint64_t size = 0) const {
         // Simple pattern matching
         if (!datasetNameMask.empty()) {
             std::string pattern = "^";
@@ -1211,7 +1211,7 @@ public:
     // Execute ABACKUP
     ABARSResult executeABackup(const std::string& groupName,
                                const std::vector<std::string>& datasets,
-                               const ABackupOptions& options = ABackupOptions()) {
+                               [[maybe_unused]] const ABackupOptions& options = ABackupOptions()) {
         ABARSResult result;
         result.operation = ABARSOperation::ABACKUP;
         result.aggregateName = groupName;
@@ -1317,7 +1317,7 @@ public:
     // Execute ARECOVER
     ABARSResult executeARecover(const std::string& groupName,
                                 const std::vector<std::string>& datasets = {},
-                                const ARecoverOptions& options = ARecoverOptions()) {
+                                [[maybe_unused]] const ARecoverOptions& options = ARecoverOptions()) {
         ABARSResult result;
         result.operation = ABARSOperation::ARECOVER;
         result.aggregateName = groupName;
@@ -1415,7 +1415,7 @@ public:
     
     // List aggregate contents
     std::vector<AggregateDatasetInfo> listAggregateContents(
-            const std::string& groupName = "") const {
+            [[maybe_unused]] const std::string& groupName = "") const {
         std::vector<AggregateDatasetInfo> result;
         
         for (const auto& [dsn, info] : datasetInfo_) {

@@ -911,7 +911,7 @@ public:
     }
     
     MigrationResult uploadObject(const MigrationRequest& request,
-                                std::function<void(const TransferProgress&)> progressCallback) override {
+                                [[maybe_unused]] std::function<void(const TransferProgress&)> progressCallback) override {
         MigrationResult result;
         result.requestId = request.requestId;
         result.startTime = std::chrono::system_clock::now();
@@ -951,7 +951,7 @@ public:
     }
     
     RecallResult downloadObject(const RecallRequest& request,
-                               std::function<void(const TransferProgress&)> progressCallback) override {
+                               [[maybe_unused]] std::function<void(const TransferProgress&)> progressCallback) override {
         RecallResult result;
         result.requestId = request.requestId;
         result.startTime = std::chrono::system_clock::now();
@@ -1004,7 +1004,8 @@ public:
     }
     
     bool initiateGlacierRestore(const std::string& bucket, const std::string& key,
-                                uint32_t restoreDays, RecallPriority priority) override {
+                                [[maybe_unused]] uint32_t restoreDays,
+                                [[maybe_unused]] RecallPriority priority) override {
         // Azure uses "rehydrate" for archive tier
         return changeStorageClass(bucket, key, CloudStorageClass::AZURE_HOT);
     }
@@ -1275,7 +1276,7 @@ public:
     
     // Recommend optimal storage class
     CloudStorageClass recommendStorageClass(uint64_t sizeBytes,
-                                            uint32_t expectedDaysStored,
+                                            [[maybe_unused]] uint32_t expectedDaysStored,
                                             uint32_t expectedRecallsPerYear) const {
         auto comparisons = compareStorageClasses(sizeBytes, expectedRecallsPerYear);
         

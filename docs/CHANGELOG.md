@@ -1,7 +1,30 @@
 # IBM DFSMShsm (Hierarchy Storage Manager) Emulation - Change Log
-Version 4.2.0
+Version 4.2.1
 
 All notable changes to this project will be documented in this file.
+
+## [4.2.1] - 2025-01-07
+
+### Fixed
+- Fixed 22 unused parameter warnings for warning-free compilation with -Wall -Wextra -Wpedantic
+  - hsm_reports.hpp: generateText(), generateJSON() - unused 'records' parameter
+  - hsm_abackup.hpp: simulateBackup() - unused 'group' parameter
+  - hsm_sms.hpp: isExpired() - unused 'now' parameter; matches() - unused 'jobName' parameter
+  - hsm_cloud_tier.hpp: AzureProvider uploadObject(), downloadObject() - unused 'progressCallback';
+    initiateGlacierRestore() - unused 'restoreDays', 'priority'; recommendStorageClass() - unused 'expectedDaysStored'
+  - hsm_abars.hpp: matches() - unused 'sc' parameter; executeABackup(), executeARecover() - unused 'options';
+    listAggregateContents() - unused 'groupName'
+  - hsm_crq.hpp: dequeueForHost() - unused 'hostName'; reportRecallComplete() - unused 'bytesRecalled';
+    reportRecallFailed() - unused 'errorMessage'
+  - hsm_sdsp.hpp: calculateAffinityScore() - unused 'request' parameter
+  - hsm_extended_statistics.hpp: generateDailySummary(), generateSLACompliance(), generateAnomalyReport(),
+    generatePerformanceAnalysis() - unused 'options' parameter
+  - hsm_parallel.hpp: allocateAlias() - unused 'job_name' parameter
+- All parameters marked with [[maybe_unused]] C++17 attribute for clean compilation
+- Verified zero warnings with GCC 13.3.0 using -std=c++20 -Wall -Wextra -Wpedantic
+
+### Changed
+- Patch version bump (4.2.0 -> 4.2.1) for warning fixes
 
 ## [4.2.0] - 2025-01-06
 

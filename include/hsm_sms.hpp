@@ -256,7 +256,7 @@ struct RetentionPolicy {
     std::string expirationDate;          // YYYY/DDD format or blank
     bool deleteAfterExpiration{false};
     
-    bool isExpired(std::chrono::system_clock::time_point now) const {
+    bool isExpired([[maybe_unused]] std::chrono::system_clock::time_point now) const {
         if (retentionDays == 0) return false;
         // Simplified check - would need creation date in practice
         return false;
@@ -323,7 +323,7 @@ struct ACSFilterCriteria {
     DataSetOrganization dsorgFilter{DataSetOrganization::UNDEFINED};
     
     bool matches(const std::string& dsn, const std::string& userId = "",
-                 const std::string& jobName = "") const {
+                 [[maybe_unused]] const std::string& jobName = "") const {
         // Convert mask to regex pattern
         auto maskToRegex = [](const std::string& mask) -> std::regex {
             std::string pattern = "^";

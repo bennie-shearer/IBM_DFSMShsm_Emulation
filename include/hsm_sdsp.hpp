@@ -421,7 +421,7 @@ private:
     }
     
     double calculateAffinityScore(const VolumeMetrics& metrics,
-                                  const PlacementRequest& request,
+                                  [[maybe_unused]] const PlacementRequest& request,
                                   const std::optional<AffinityGroup>& affinity) const {
         if (!affinity || affinity->affinity_type == AffinityType::NO_AFFINITY) {
             return 0.5;  // Neutral score

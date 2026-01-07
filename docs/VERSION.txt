@@ -2,8 +2,8 @@ IBM DFSMShsm Emulation Library
 Version Information
 ================================================================================
 
-Current Version: 4.2.0
-Release Date: 2025-01-06
+Current Version: 4.2.1
+Release Date: 2025-01-07
 
 Version Format: MAJOR.MINOR.PATCH
 
@@ -14,6 +14,12 @@ PATCH: Bug fixes, documentation updates, minor improvements
 --------------------------------------------------------------------------------
 Version History Summary
 --------------------------------------------------------------------------------
+
+4.2.1 (2025-01-07)
+  - Fixed 22 unused parameter warnings across 9 header files
+  - All parameters marked with [[maybe_unused]] attribute
+  - Zero warnings with -Wall -Wextra -Wpedantic
+  - Total headers: 77
 
 4.2.0 (2025-01-06)
   - Added hsm_csv.hpp for CSV parsing and writing
